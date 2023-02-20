@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./styles/Pokemon.css";
 
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState();
@@ -18,7 +19,7 @@ const Pokemon = () => {
   return (
     <main>
       {/*parte superior */}
-      <section>
+      <section className="pokemon">
         <section>
           <div>
             <img

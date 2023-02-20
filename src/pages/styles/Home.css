@@ -3,8 +3,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
-  padding: 10px;
+  height: 78vh;
+  padding: 8px;
 }
 
 .home__img {
@@ -19,8 +19,11 @@
 }
 
 .home__start {
-  padding: 0;
-  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
 .home__input {
@@ -43,6 +46,7 @@
 .home__input:focus {
   border: 2px solid #d93f3f;
   box-shadow: 0 0 5px #d93f3f;
+  border: none;
 }
 
 .home__button {
@@ -54,7 +58,7 @@
   font-size: 15px;
   padding: 10px 20px;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 5px;
   border-radius: 5px;
 }
 .home__button:hover {

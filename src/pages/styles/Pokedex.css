@@ -4,8 +4,7 @@
 }
 
 .pokedex__title {
-  height: 100px;
-
+  /* height: 100px; */
   /* display: flex;
   align-items: center; */
   text-align: center;
@@ -25,10 +24,98 @@
   }
 }
 
+@media screen and (max-width: 470px) {
+  .pokedex__title {
+    font-size: 13px;
+  }
+  .pokedex__input {
+    font-size: 14px;
+  }
+  .pokedex__button {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+  .pokedex__select {
+    font-size: 14px;
+  }
+  .pokedex__form {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.pokedex__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 432px) {
+  .pokedex__form {
+    flex-direction: column;
+    text-align: center;
+  }
+  .pokedex__input {
+    margin-bottom: 10px;
+  }
   .pokedex__title {
     font-size: 15px;
   }
+}
+
+.pokedex__input {
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+}
+
+.pokedex__input::placeholder {
+  color: #999;
+}
+
+.pokedex__input:focus {
+  border: 2px solid #d93f3f;
+  box-shadow: 0 0 5px #d93f3f;
+  border: none;
+}
+
+.pokedex__button {
+  display: inline-block;
+  background-color: #d93f3f;
+  border: none;
+  transition: background 200ms ease;
+  color: white;
+  font-size: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+.pokedex__button:hover {
+  color: black;
+  background-color: #ff5e5e;
+  transition: background-color 0.3s ease;
+}
+
+.pokedex__select {
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
 }
 
 .pokedex__Card {
@@ -36,4 +123,30 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+}
+
+/*Pagination*/
+
+.pagination__list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination__item {
+  width: 40px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.page__active {
+  background-color: red;
+  color: white;
 }

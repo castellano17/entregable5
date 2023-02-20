@@ -1,0 +1,9 @@
+.pokemon {
+  display: flex;
+  height: 350px;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}

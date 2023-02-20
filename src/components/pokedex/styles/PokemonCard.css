@@ -5,8 +5,12 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
+.pokemonCard:hover {
+  transform: scale(1.02);
+}
 .pokemonCard__header {
   height: 200px;
   background-color: green;

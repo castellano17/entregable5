@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import Pagination from "../components/pokedex/Pagination";
 import PokemonCard from "../components/pokedex/PokemonCard";
 import "./styles/Pokedex.css";
 
@@ -120,16 +121,17 @@ const Pokedex = () => {
         <span className="pokedex__title-name">Welcome {nameTrainer},</span> here
         you can find information about of your favorite pokemon?{" "}
       </p>
-      <form onSubmit={handleSubmit}>
+      <form className="pokedex__form" onSubmit={handleSubmit}>
         <div>
           <input
+            className="pokedex__input"
             type="text"
             id="pokemonName"
             placeholder="Search your pokemon"
           />
-          <button>Search</button>
+          <button className="pokedex__button">Search</button>
         </div>
-        <select onChange={handleChangeSelect}>
+        <select className="pokedex__select" onChange={handleChangeSelect}>
           <option value="">All</option>
           {types.map((type) => (
             <option key={type.url}>{type.name}</option>
@@ -141,17 +143,31 @@ const Pokedex = () => {
           <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
         ))}
       </section>
-      <section>
-        <ul>
-          <li onClick={handlePreviousPage}>{"<<"}</li>
+      <section className="pagination">
+        <ul className="pagination__list">
+          <li
+            className="pagination__item page__active"
+            onClick={handlePreviousPage}
+          >
+            {"<<"}
+          </li>
           <li onClick={() => setCurrentPage(1)}>... </li>
           {pagesInBlock.map((page) => (
-            <li onClick={() => setCurrentPage(page)} key={page}>
+            <li
+              className={`pagination__item ${page ? "page__active" : ""}`}
+              onClick={() => setCurrentPage(page)}
+              key={page}
+            >
               {page}
             </li>
           ))}
           <li onClick={() => setCurrentPage(lastPage)}>... </li>
-          <li onClick={handleNextPage}>{">>"}</li>
+          <li
+            className="pagination__item page__active"
+            onClick={handleNextPage}
+          >
+            {">>"}
+          </li>
         </ul>
       </section>
     </main>
