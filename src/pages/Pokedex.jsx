@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import PokemonCard from "../components/pokedex/PokemonCard";
+import "./styles/Pokedex.css";
 
 const Pokedex = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -114,10 +115,10 @@ const Pokedex = () => {
 
   const nameTrainer = useSelector((store) => store.nameTrainer);
   return (
-    <main style={{ maxWidth: "1400px", margin: "20px auto" }}>
-      <p>
-        <span>Welcome {nameTrainer},</span> here you can find information about
-        of your favorite pokemon?{" "}
+    <main className="pokedex">
+      <p className="pokedex__title">
+        <span className="pokedex__title-name">Welcome {nameTrainer},</span> here
+        you can find information about of your favorite pokemon?{" "}
       </p>
       <form onSubmit={handleSubmit}>
         <div>
@@ -135,14 +136,7 @@ const Pokedex = () => {
           ))}
         </select>
       </form>
-      <section
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "20px",
-          justifyContent: "center",
-        }}
-      >
+      <section className="pokedex__Card">
         {pokemonInPage.map((pokemon) => (
           <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
         ))}

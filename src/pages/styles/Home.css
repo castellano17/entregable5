@@ -1,15 +1,64 @@
 .home {
-  max-width: 1400px;
-  margin: 20px auto;
-  /* padding: 10px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  text-align: center;
+  height: 100vh;
+  padding: 10px;
 }
 
 .home__img {
-  position: absolute;
   bottom: 15px;
   left: 10px;
+}
+
+.home__welcome {
+  color: #fe1936;
+  font-size: 30px;
+  padding: 0;
+}
+
+.home__start {
+  padding: 0;
+  margin: 8px;
+}
+
+.home__input {
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+  width: 50%;
+}
+
+.home__input::placeholder {
+  color: #999;
+}
+
+.home__input:focus {
+  border: 2px solid #d93f3f;
+  box-shadow: 0 0 5px #d93f3f;
+}
+
+.home__button {
+  display: inline-block;
+  background-color: #d93f3f;
+  border: none;
+  transition: background 200ms ease;
+  color: white;
+  font-size: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.home__button:hover {
+  color: black;
+  background-color: #ff5e5e;
+  transition: background-color 0.3s ease;
 }

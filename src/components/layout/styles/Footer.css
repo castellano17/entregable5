@@ -1,0 +1,42 @@
+.footer {
+  height: 90px;
+  width: 100%;
+  background-color: #fe1936;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__black {
+  height: 30%;
+  width: 100%;
+  background-color: #0c0c0c;
+  position: relative;
+  z-index: 1;
+}
+.footer__pokeball {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  top: -20px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 10px solid #0c0c0c;
+  width: 90px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.footer__pokeball::after {
+  content: "";
+  width: 45px;
+  height: 45px;
+  display: block;
+  background-color: rgba(33, 33, 33, 1);
+  border: 10px solid #0c0c0c;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

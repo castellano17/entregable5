@@ -1,0 +1,39 @@
+.pokedex {
+  max-width: 1400px;
+  margin: 20px auto;
+}
+
+.pokedex__title {
+  height: 100px;
+
+  /* display: flex;
+  align-items: center; */
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  margin: 0;
+  margin-left: 0;
+}
+
+.pokedex__title-name {
+  color: #fe1936;
+}
+
+@media screen and (max-width: 864px) {
+  .pokedex__title {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 432px) {
+  .pokedex__title {
+    font-size: 15px;
+  }
+}
+
+.pokedex__Card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
