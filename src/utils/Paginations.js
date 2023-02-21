@@ -1,6 +1,6 @@
-export const paginationLogic = (pokemonFilter, currentPage) => {
+export const paginationLogic = (pokemonFilter, currentPage, pokemonPerPage) => {
   //Cantidad de pokemons por pagina
-  const pokemonPerPage = 12;
+  // const pokemonPerPage = 12;
 
   //pokemos que se van a mostrar en la página actual
   const sliceStart = (currentPage - 1) * pokemonPerPage;

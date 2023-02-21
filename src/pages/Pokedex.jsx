@@ -13,6 +13,12 @@ const Pokedex = () => {
   const [selectType, setSelectType] = useState("");
   const [pokemonName, setPokemonName] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [pokemonPerPage, setPokemonPerPage] = useState(12);
+
+  const handleChangePerPage = (e) => {
+    setPokemonPerPage(parseInt(e.target.value));
+    setCurrentPage(1);
+  };
 
   const handleChangeSelect = (e) => {
     setSelectType(e.target.value);
@@ -25,7 +31,8 @@ const Pokedex = () => {
 
   const { pagesInBlock, lastPage, pokemonInPage } = paginationLogic(
     pokemonFilter,
-    currentPage
+    currentPage,
+    pokemonPerPage
   );
 
   const handleNextPage = () => {
@@ -108,6 +115,17 @@ const Pokedex = () => {
           {types.map((type) => (
             <option key={type.url}>{type.name}</option>
           ))}
+        </select>
+
+        <select
+          className="pokedex__select"
+          onChange={handleChangePerPage}
+          value={pokemonPerPage}
+        >
+          <option value="4">4</option>
+          <option value="8">8</option>
+          <option value="12">12</option>
+          <option value="20">20</option>
         </select>
       </form>
 
