@@ -44,6 +44,26 @@
   }
 }
 
+@media screen and (max-width: 560px) {
+  .pokedex__title {
+    font-size: 13px;
+  }
+  .pokedex__input {
+    font-size: 14px;
+  }
+  .pokedex__button {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+  .pokedex__select {
+    font-size: 14px;
+  }
+  .pokedex__form {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 .pokedex__form {
   display: flex;
   align-items: center;
