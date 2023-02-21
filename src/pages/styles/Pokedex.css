@@ -124,3 +124,24 @@
   gap: 20px;
   justify-content: center;
 }
+
+/* .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d93f3f;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  transition: all 1.9ms ease;
+}
+
+.back-to-top:hover {
+  background-color: #ff5e5e;
+  transform: translateY(-5px);
+} */

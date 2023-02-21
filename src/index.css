@@ -6,7 +6,15 @@
 
 body {
   margin: 0;
+  /* scroll-behavior: smooth; */
 }
+
+/* .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+} */
 
 html {
   box-sizing: border-box;

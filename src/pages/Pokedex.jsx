@@ -134,6 +134,13 @@ const Pokedex = () => {
         currentPage={currentPage}
         lastPage={lastPage}
       />
+
+      {/* <button
+        className="back-to-top"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <i className="bx bx-up-arrow-circle"></i>
+      </button> */}
     </main>
   );
 };
