@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import Pagination from "../components/pokedex/Pagination";
 import PokemonCard from "../components/pokedex/PokemonCard";
 import { paginationLogic } from "../utils/Paginations";
 import "./styles/Pokedex.css";
@@ -109,40 +110,26 @@ const Pokedex = () => {
           ))}
         </select>
       </form>
+
+      <Pagination
+        handlePreviousPage={handlePreviousPage}
+        setCurrentPage={setCurrentPage}
+        handleNextPage={handleNextPage}
+        pagesInBlock={pagesInBlock}
+      />
+
       <section className="pokedex__Card">
         {pokemonInPage.map((pokemon) => (
           <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
         ))}
       </section>
-      <section className="pagination">
-        <ul className="pagination__container">
-          <li
-            className="pagination__prev pagination__active"
-            onClick={handlePreviousPage}
-          >
-            {"<<"}
-          </li>
-          <li onClick={() => setCurrentPage(1)}>... </li>
-          {pagesInBlock.map((page) => (
-            <li
-              className={`pagination__page ${
-                page === page && "pagination__active"
-              }`}
-              onClick={() => setCurrentPage(page)}
-              key={page}
-            >
-              {page}
-            </li>
-          ))}
-          <li onClick={() => setCurrentPage(lastPage)}>... </li>
-          <li
-            className="pagination__next pagination__active"
-            onClick={handleNextPage}
-          >
-            {">>"}
-          </li>
-        </ul>
-      </section>
+
+      <Pagination
+        handlePreviousPage={handlePreviousPage}
+        setCurrentPage={setCurrentPage}
+        handleNextPage={handleNextPage}
+        pagesInBlock={pagesInBlock}
+      />
     </main>
   );
 };
