@@ -124,38 +124,3 @@
   gap: 20px;
   justify-content: center;
 }
-
-/*Pagination*/
-.pagination {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  width: max-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.pagination__container {
-  display: flex;
-  gap: 5px;
-}
-
-.pagination__page,
-.pagination__prev,
-.pagination__next {
-  width: 35px;
-  aspect-ratio: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.pagination__active {
-  background-color: #ff4c4c;
-  color: white;
-  border-radius: 5px;
-}

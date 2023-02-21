@@ -116,6 +116,8 @@ const Pokedex = () => {
         setCurrentPage={setCurrentPage}
         handleNextPage={handleNextPage}
         pagesInBlock={pagesInBlock}
+        currentPage={currentPage}
+        lastPage={lastPage}
       />
 
       <section className="pokedex__Card">
@@ -129,6 +131,8 @@ const Pokedex = () => {
         setCurrentPage={setCurrentPage}
         handleNextPage={handleNextPage}
         pagesInBlock={pagesInBlock}
+        currentPage={currentPage}
+        lastPage={lastPage}
       />
     </main>
   );
