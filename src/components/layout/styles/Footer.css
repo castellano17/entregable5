@@ -14,8 +14,14 @@
 .footer__by {
   position: absolute;
   color: white;
-  bottom: 0;
-  right: 0;
+  bottom: 2px;
+  right: 5px;
+}
+
+@media screen and (max-width: 568px) {
+  .footer__by {
+    font-size: 10px;
+  }
 }
 
 .footer__black {

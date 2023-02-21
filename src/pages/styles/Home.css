@@ -66,3 +66,9 @@
   background-color: #ff5e5e;
   transition: background-color 0.3s ease;
 }
+
+@media screen and (max-width: 768px) {
+  .home__input {
+    margin-bottom: 50px;
+  }
+}
