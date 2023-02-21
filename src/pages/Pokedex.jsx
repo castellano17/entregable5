@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Pagination from "../components/pokedex/Pagination";
 import PokemonCard from "../components/pokedex/PokemonCard";
+import { paginationLogic } from "../utils/Paginations";
 import "./styles/Pokedex.css";
 
 const Pokedex = () => {
@@ -22,39 +22,10 @@ const Pokedex = () => {
     setPokemonName(e.target.pokemonName.value);
   };
 
-  const paginationLogic = () => {
-    //Cantidad de pokemons por pagina
-    const pokemonPerPage = 12;
-
-    //pokemos que se van a mostrar en la página actual
-    const sliceStart = (currentPage - 1) * pokemonPerPage;
-    const sliceEnd = sliceStart + pokemonPerPage;
-    const pokemonInPage = pokemonFilter.slice(sliceStart, sliceEnd);
-
-    //Última página
-    const lastPage = Math.ceil(pokemonFilter.length / pokemonPerPage) || 1;
-
-    //Bloque actual
-    const pagesPerBlock = 5;
-    const actualBlock = Math.ceil(currentPage / pagesPerBlock);
-
-    //Páginas que se van a mostrar en el bloque actual
-    const pagesInBlock = [];
-    const minPage = actualBlock * pagesPerBlock - pagesPerBlock + 1;
-    const maxPage = actualBlock * pagesPerBlock;
-    for (let i = minPage; i <= maxPage; i++) {
-      if (i <= lastPage) {
-        pagesInBlock.push(i);
-      }
-    }
-    return {
-      pagesInBlock,
-      lastPage,
-      pokemonInPage,
-    };
-  };
-
-  const { pagesInBlock, lastPage, pokemonInPage } = paginationLogic();
+  const { pagesInBlock, lastPage, pokemonInPage } = paginationLogic(
+    pokemonFilter,
+    currentPage
+  );
 
   const handleNextPage = () => {
     const newPage = currentPage + 1;
@@ -144,9 +115,9 @@ const Pokedex = () => {
         ))}
       </section>
       <section className="pagination">
-        <ul className="pagination__list">
+        <ul className="pagination__container">
           <li
-            className="pagination__item page__active"
+            className="pagination__prev pagination__active"
             onClick={handlePreviousPage}
           >
             {"<<"}
@@ -154,7 +125,9 @@ const Pokedex = () => {
           <li onClick={() => setCurrentPage(1)}>... </li>
           {pagesInBlock.map((page) => (
             <li
-              className={`pagination__item ${page ? "page__active" : ""}`}
+              className={`pagination__page ${
+                page === page && "pagination__active"
+              }`}
               onClick={() => setCurrentPage(page)}
               key={page}
             >
@@ -163,7 +136,7 @@ const Pokedex = () => {
           ))}
           <li onClick={() => setCurrentPage(lastPage)}>... </li>
           <li
-            className="pagination__item page__active"
+            className="pagination__next pagination__active"
             onClick={handleNextPage}
           >
             {">>"}

@@ -1,4 +1,121 @@
-.pokemon {
+* {
+  --grass: linear-gradient(
+    178.92deg,
+    #7ec6c5 0.92%,
+    #abdac6 47.96%,
+    #cae099 99.08%
+  );
+  --fire: linear-gradient(
+    176.37deg,
+    #f96d6f -32.26%,
+    #e35825 22.55%,
+    #e8ae1b 125.72%
+  );
+  --water: linear-gradient(
+    179.57deg,
+    #133258 -70.14%,
+    #1479fb 56.16%,
+    #82b2f1 214.85%
+  );
+  --normal: linear-gradient(
+    181.51deg,
+    #735259 -6.44%,
+    #bc6b7c 121.95%,
+    #7c3f4c 186.11%
+  );
+  --fighting: linear-gradient(
+    181.51deg,
+    #735259 -6.44%,
+    #bc6b7c 121.95%,
+    #7c3f4c 186.11%
+  );
+  --poison: linear-gradient(
+    177.03deg,
+    #5b3184 -11.97%,
+    #a564e3 71.28%,
+    #ce9bff 135.64%
+  );
+  --rock: linear-gradient(
+    177.03deg,
+    #7e7e7e -11.97%,
+    #8d8d94 57.49%,
+    #d3d3d3 135.64%
+  );
+  --ice: linear-gradient(
+    177.03deg,
+    #6fbedf -11.97%,
+    #64cbf5 47.77%,
+    #bdebfe 136.72%
+  );
+  --dark: linear-gradient(
+    177.03deg,
+    #030706 -11.97%,
+    #0d1211 57.49%,
+    #5a5e5d 135.64%
+  );
+  --dragon: linear-gradient(
+    179.75deg,
+    #478a93 -19.96%,
+    #56a4ae 43.67%,
+    #a2bec1 138.4%
+  );
+  --magic: linear-gradient(
+    179.75deg,
+    #971b45 -19.96%,
+    #c23867 43.67%,
+    #cd7d98 138.4%
+  );
+  --steel: linear-gradient(
+    179.75deg,
+    #0c1395 -19.96%,
+    #2b319b 43.67%,
+    #7075d9 138.4%
+  );
+  --ground: linear-gradient(
+    179.75deg,
+    #654008 -19.96%,
+    #895c1a 43.67%,
+    #d69638 138.4%
+  );
+  --bug: linear-gradient(
+    177.56deg,
+    #62db60 -58.92%,
+    #3bb039 16.57%,
+    #aaffa8 209.53%
+  );
+  --ghost: linear-gradient(
+    177.03deg,
+    #323569 -11.97%,
+    #454aa8 57.49%,
+    #787dda 135.64%
+  );
+  --psychic: linear-gradient(
+    179.75deg,
+    #e62d2d -19.96%,
+    #d13e3e 43.67%,
+    #f07f7f 138.4%
+  );
+  --electric: linear-gradient(
+    179.75deg,
+    #bcc004 -19.96%,
+    #e3dd24 43.67%,
+    #ffff00 138.4%
+  );
+  --flying: linear-gradient(
+    179.75deg,
+    #94bbe9 -19.96%,
+    #c1b5da 43.67%,
+    #eeaeca 138.4%
+  );
+  --fairy: linear-gradient(
+    179.75deg,
+    #d31c65 -19.96%,
+    #d31c81 43.67%,
+    #d31cc4 138.4%
+  );
+}
+
+.pokemon__header {
   display: flex;
   height: 350px;
   width: 100%;
@@ -6,4 +123,277 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+}
+
+.pokemon__img {
+  position: absolute;
+  justify-content: center;
+  max-width: 350px;
+  margin: 0 10px auto;
+  z-index: 1;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Estilo de imagen para dispositivos móviles */
+@media screen and (max-width: 480px) {
+  .pokemon__img {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .pokemon__img {
+    max-width: 400px;
+  }
+}
+
+.pokemon__back {
+  position: absolute;
+  width: 80%;
+  max-width: 1100px;
+  height: 150px;
+  bottom: -1px;
+  right: auto;
+  left: auto;
+  border-radius: 8px;
+}
+
+.pokemon__body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+}
+
+.pokemon__id {
+  margin-top: 10px;
+  padding: 3px;
+  border: 1px solid grey;
+  text-align: center;
+  max-width: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pokemon__name {
+  padding: 10px;
+  font-size: 40px;
+  margin-top: 15px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* Status weight & Height*/
+
+.pokemon__status {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  justify-content: space-evenly;
+}
+
+.pokemon__weight,
+.pokemon__height {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon__span {
+  font-size: 30px;
+  font-weight: 700;
+  color: #aaa;
+}
+
+.pokemon__span-id {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+/* Types */
+
+.typeabilities {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.type__card,
+.abilities__card {
+  display: flex;
+  text-align: center;
+  min-height: 98px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 300px;
+  gap: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.type__name {
+  margin: 10px auto 0 auto;
+  width: 300px;
+  height: 30px;
+  text-align: center;
+}
+
+.type__item {
+  justify-content: center;
+  width: 140px;
+  height: 38px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 18px;
+  padding: 8px 0 20px;
+  color: #fff;
+}
+
+.abilities__item {
+  justify-content: center;
+  width: 140px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 18px;
+  background: #aaa;
+  padding: 6px;
+  color: #fff;
+}
+
+/*starts Progress*/
+
+.pokemon__stats {
+  display: flex;
+  height: 500px;
+  gap: 10px;
+}
+.pokemon__stats-info {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.pokemon__stats-title {
+  text-align: center;
+  font-size: 32px;
+}
+
+.pokemon__stat {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.pokemon__stat-header {
+  display: flex;
+  justify-content: space-between;
+}
+.pokemon__stat-name {
+  text-transform: capitalize;
+  padding: 5px;
+}
+
+.pokemon__stat-barGray {
+  background-color: #f7f7f7;
+  height: 25px;
+}
+
+.pokemon__stat-barProgress {
+  background: linear-gradient(90deg, #fcd676 -2.25%, #e6901e 133.18%);
+  height: 25px;
+  width: 50%;
+}
+
+/* bg type color */
+
+.grass {
+  background: var(--grass);
+}
+
+.fire {
+  background: var(--fire);
+}
+
+.water {
+  background: var(--water);
+}
+
+.bug {
+  background: var(--bug);
+}
+
+.normal {
+  background: var(--normal);
+}
+
+.fighting {
+  background: var(--fighting);
+}
+
+.poison {
+  background: var(--poison);
+}
+
+.rock {
+  background: var(--rock);
+}
+
+.ice {
+  background: var(--ice);
+}
+
+.dark {
+  background: var(--dark);
+}
+
+.dragon {
+  background: var(--dragon);
+}
+
+.magic {
+  background: var(--magic);
+}
+
+.steel {
+  background: var(--steel);
+}
+
+.ground {
+  background: var(--ground);
+}
+
+.ghost {
+  background: var(--ghost);
+}
+
+.psychic {
+  background: var(--psychic);
+}
+
+.electric {
+  background: var(--electric);
+}
+
+.flying {
+  background: var(--flying);
+}
+
+.fairy {
+  background: var(--fairy);
 }
