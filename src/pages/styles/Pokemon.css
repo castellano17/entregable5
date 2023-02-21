@@ -184,10 +184,21 @@
   margin-right: auto;
 }
 
+.pokemon__name-line {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+.pokemon__name-hr {
+  width: 70%;
+}
+
 .pokemon__name {
   padding: 10px;
   font-size: 40px;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   text-align: center;
   text-transform: capitalize;
 }

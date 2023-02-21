@@ -43,7 +43,17 @@ const Pokemon = () => {
           {/*Body */}
           <section className="pokemon__body ">
             <h2 className="pokemon__id"># {pokemon?.id}</h2>
-            <h2 className="pokemon__name">{pokemon?.name}</h2>
+
+            <div className="pokemon__name-line">
+              <div className="pokemon__name-hr">
+                <hr />
+              </div>
+              <h2 className="pokemon__name">{pokemon?.name}</h2>
+              <div className="pokemon__name-hr">
+                <hr />
+              </div>
+            </div>
+
             <div className="pokemon__status">
               <div className="pokemon__weight">
                 <h5 className="pokemon__span">Weight</h5>
@@ -85,7 +95,16 @@ const Pokemon = () => {
             {/* State */}
             <section className="pokemon__stats">
               <section className="pokemon__stats-info">
-                <h2 className="pokemon__stats-title">Stast</h2>
+                <div className="pokemon__name-line">
+                  <div className="pokemon__name-hr">
+                    <hr />
+                  </div>
+                  <h2 className="pokemon__stats-title">Stast</h2>
+                  <div className="pokemon__name-hr">
+                    <hr />
+                  </div>
+                </div>
+
                 {pokemon?.stats.map((stat) => (
                   <article className="pokemon__stat" key={stat.stat.name}>
                     <div className="pokemon__stat-header">
