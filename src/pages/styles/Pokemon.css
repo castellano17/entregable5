@@ -142,10 +142,16 @@
   .pokemon__img {
     max-width: 500px;
   }
+  .pokemon__header {
+    height: 210px;
+  }
 }
 @media screen and (max-width: 320px) {
   .pokemon__img {
     max-width: 400px;
+  }
+  .pokemon__header {
+    height: 210px;
   }
 }
 
