@@ -28,6 +28,7 @@
   cursor: pointer;
   font-size: 24px;
   transition: background 200ms ease;
+  padding: 1px;
 }
 
 .pagination__first-page:hover,
