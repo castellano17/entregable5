@@ -11,7 +11,7 @@ const Pagination = ({
 }) => {
   return (
     <section className="pagination">
-      <ul className="pagination__container">
+      <ul className="pagination__list">
         <li onClick={() => setCurrentPage(1)} title="Primera página">
           <i className="pagination__first-page bx bx-first-page"></i>
         </li>
