@@ -5,6 +5,7 @@ import Pokedex from "./pages/Pokedex";
 import Pokemon from "./pages/Pokemon";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import ProtectedHome from "./components/ProtectedHome";
+import Error404 from "./components/pokedex/Error404";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Route path="/pokedex" element={<Pokedex />} />
           <Route path="/pokedex/:id" element={<Pokemon />} />
         </Route>
+
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
   );
